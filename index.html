@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Навігаційна панель -->
+    <nav id="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Лого" class="logo" id="logo">
+            <div class="author-info" id="authorInfo">
+                <img src="author.jpg" alt="Автор">
+                <p>Автор: Якубенко Денис<br>Студент групи П-322</p>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#calculator">Калькулятор</a></li>
+            <li><a href="#divisibility">Подільність</a></li>
+            <li><a href="#gcd">НСД</a></li>
+            <li><a href="#money">Гривня</a></li>
+            <li><a href="#text">Текст</a></li>
+            <li><a href="#timer">Таймер</a></li>
+            <li><a href="#color">Кольори</a></li>
+        </ul>
+    </nav>
+
+    <!-- Блоки завдань -->
+    <div class="content">
+        <!-- Попередні завдання (калькулятор, подільність, НСД) -->
+        <section id="calculator" class="task-section">
+            <h2>Калькулятор</h2>
+            <div class="calculator">
+                <input type="number" id="num1" placeholder="Число 1">
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="number" id="num2" placeholder="Число 2">
+                <button onclick="calculate()">Обчислити</button>
+                <p id="result">Результат: </p>
+            </div>
+        </section>
+
+        <section id="money" class="task-section">
+            <h2>Правопис гривні</h2>
+            <div class="money">
+                <input type="number" id="moneyInput" placeholder="Введіть суму" min="0">
+                <button onclick="formatMoney()">Перевірити</button>
+                <p id="moneyResult"></p>
+            </div>
+        </section>
+
+        <section id="text" class="task-section">
+            <h2>Очистка тексту</h2>
+            <div class="text">
+                <textarea id="textInput" placeholder="Введіть текст"></textarea>
+                <button onclick="cleanText()">Видалити пробіли</button>
+                <button onclick="countChars()">Підрахувати символи</button>
+                <p id="textResult"></p>
+            </div>
+        </section>
+
+        <section id="timer" class="task-section">
+            <h2>Таймер</h2>
+            <div class="timer">
+                <input type="number" id="timerInput" placeholder="Секунди" min="1">
+                <button onclick="startTimer()">Старт</button>
+                <p id="timerDisplay">00:00</p>
+            </div>
+        </section>
+
+        <section id="color" class="task-section">
+            <h2>Генератор кольорів</h2>
+            <div class="color">
+                <button onclick="generateColor()">Згенерувати колір</button>
+                <p id="colorHex">HEX: #FFFFFF</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
